@@ -1,5 +1,5 @@
 import express from "express";
-import { contacts } from "./data.js";
+import * as controller from "./controller.js";
 
 const app = express();
 
@@ -7,13 +7,8 @@ app.get("/", function (req, res) {
   res.send("Hello EPSI");
 });
 
-app.get("/api/contacts", function (req, res) {
-  res.status(200).json(contacts);
-});
+app.get("/api/contacts", controller.getContacts);
 
-app.get("/api/contacts/:id", function (req, res) {
-  const id = req.params.id;
-  res.status(200).json({ id });
-});
+app.get("/api/contacts/:id", controller.getContact);
 
 export default app;
