@@ -8,7 +8,6 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/contacts", controller.getContacts);
-
 app.get("/api/contacts/:id", controller.getContact);
 
 export default app;
