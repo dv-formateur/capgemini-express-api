@@ -11,4 +11,8 @@ function getContact(req, res) {
   res.status(200).json(contact);
 }
 
-export { getContacts, getContact };
+function postContact(req, res) {
+  console.log(req.body.nom);
+}
+
+export { getContacts, getContact, postContact };
