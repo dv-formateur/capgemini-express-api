@@ -12,7 +12,11 @@ function getContact(req, res) {
 }
 
 function postContact(req, res) {
-  console.log(req.body.nom);
+  const { nom, telephone } = req.body;
+  // A valider
+  // Après validation
+  const contact = service.postContact(nom, telephone);
+  res.status(200).json(contact);
 }
 
 export { getContacts, getContact, postContact };
